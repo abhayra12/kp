@@ -1,0 +1,88 @@
+package area_3d;
+public class Cube {
+	double side;
+	public double cube_area() {
+		return 4*side*side;
+	}
+void get_side() {
+		System.out.println("Side of square is: " + side);
+	}
+	public Cube(double side){
+		this.side = side;
+	}}
+
+package area_3d;
+public class Cylinder {
+	double height;
+	double radius;
+	public double cylinder_area() {
+		return 3.14*radius*radius*height;
+	}
+	public void get_side() {
+		System.out.println("Height of Cylinder: " + height);
+		System.out.println("Radius of Cylinder: " + radius);
+	}
+public Cylinder(double height, double radius){
+		this.height = height;
+		this.radius = radius;
+	}
+}
+
+package area_solid;
+public class Rectangle {
+	double length;
+	double breadth;
+	public double rect_area() {
+		return length*breadth;
+	}
+	protected void get_dim() {
+		System.out.println("Length of Rectangle is: " + length);
+		System.out.println("Breadth of Rectangle is: " + breadth);
+	}
+	public Rectangle(double l, double b){
+		length = l;
+		breadth = b;
+	}
+}
+package area_solid;
+public class Square {
+	double side;
+	public double square_area() {
+		
+		return side*side;
+	}
+	
+	private void get_side() {
+		System.out.println("Side of square is: " + side);
+	}
+	public Square(double side){
+		this.side = side;
+	}
+}
+
+package final_area;
+import area_3d.*; // Import package with Area calculations of Cube & Cylinder
+import area_solid.*; // Import package with Area Calculations of square & Rectangle
+public class CalculateArea {
+	public static void main(String[] args) {
+		System.out.println("Area Calculator:");
+		System.out.println("\n\nRectangle: ");
+		Rectangle r = new Rectangle(10.0, 20.0);
+		// Protected Method unable to access in other package
+//		r.get_dim();
+		System.out.println("\nArea of Rectangle is: " + r.rect_area());
+		System.out.println("\n\nSquare: ");
+		Square s = new Square(10.0);
+		// Private Method unable to access in other file even if of same package
+//		s.get_side();
+		System.out.println("\nArea of Square is: " + s.square_area());
+            System.out.println("\n\nCube: ");
+		Cube c = new Cube(10.0);
+		// Default Method not accessible in other package
+//		c.get_side();
+		System.out.println("\nArea of Cube is: " + c.cube_area());
+		System.out.println("\n\nCylinder ");
+		Cylinder cyl = new Cylinder(10.0, 20.0);
+		// Public method accessible all over the project
+//		cyl.get_side();
+		System.out.println("\nArea of Cylinder is: " + cyl.cylinder_area());
