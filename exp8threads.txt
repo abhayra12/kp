@@ -1,0 +1,57 @@
+package Exp8;
+import java.util.*;
+class Bankclient
+{
+    Scanner sc=new Scanner(System.in);
+    int bal=9000;
+    int Wamount=0;
+    synchronized void withdraw()
+    {
+        System.out.println("Enter Amount to Withdraw");
+        int amount=sc.nextInt();
+        Wamount=amount;
+        try
+        {if(bal<amount)
+        {
+            wait();
+        }}
+        catch(Exception e)
+        {
+            System.out.println("Wait Called");
+        }
+        bal-=amount;
+        System.out.println("Balance After Withdraw is "+bal);
+    }
+    synchronized void deposit()
+    {
+        System.out.println("Enter Amount to Deposit");
+        int amount=sc.nextInt();
+        bal=bal+amount;
+        System.out.println("Balance After Deposit is "+bal);
+        while(Wamount>bal)
+        {
+            System.out.println("Insufficient amount to withdraw \nDeposite Amount");
+            deposit();
+        }
+        notify();
+    }
+}
+public class multiThread {
+
+    public static void main(String[] args) {
+// TODO Auto-generated method stub
+        Bankclient obj=new Bankclient();
+        new Thread()
+        {
+            public void run()
+            {
+                obj.withdraw();
+            }
+        }.start();
+        new Thread() {
+            public void run() {
+                obj.deposit();
+            }
+        }.start();
+    }
+}
