@@ -1,0 +1,38 @@
+import java.io.*;
+public class MultipleTryCatchExample {
+    public static void main(String[] args) {
+        try {
+            // first try block
+            int[] arr = new int[3];
+            arr[4] = 10; // will throw an ArrayIndexOutOfBoundsException
+        } catch (ArrayIndexOutOfBoundsException ex) {
+            // handle ArrayIndexOutOfBoundsException
+            System.out.println("Caught ArrayIndexOutOfBoundsException!");
+            System.out.println("Message: " + ex.getMessage());
+            System.out.println("Cause: " + ex.getCause());
+        }
+        try {
+            // second try block
+            BufferedReader reader = new BufferedReader(new FileReader("file.txt")); // will throw a FileNotFoundException
+        } catch (FileNotFoundException ex) {
+            // handle FileNotFoundException
+            System.out.println("Caught FileNotFoundException!");
+            System.out.println("Message: " + ex.getMessage());
+            System.out.println("Cause: " + ex.getCause());
+        } catch (IOException ex) {
+            // handle IOException
+            System.out.println("Caught IOException!");
+            System.out.println("Message: " + ex.getMessage());
+            System.out.println("Cause: " + ex.getCause());
+        }
+        try {
+            // third try block
+            int num = Integer.parseInt("abc"); // will throw a NumberFormatException
+        } catch (NumberFormatException ex) {
+            // handle NumberFormatException
+            System.out.println("Caught NumberFormatException!");
+            System.out.println("Message: " + ex.getMessage());
+            System.out.println("Cause: " + ex.getCause());
+        }
+    }
+}

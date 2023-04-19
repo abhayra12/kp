@@ -1,0 +1,23 @@
+interface A {// This is interface A
+    void print();
+}
+
+interface B extends A {// interface B is extending interface A
+    void show();
+}
+
+public class Multilevel implements B { // class Multilevel is implementing interface B
+    public void print() {
+        System.out.println("TYETC224 Virajas Joshi");
+    }
+
+    public void show() {
+        System.out.println("This is Multilevel Interface");
+    }
+
+    public static void main(String[] args) { // TODO Auto-generated method stub
+        Multilevel obj = new Multilevel();
+        obj.print();
+        obj.show();
+    }
+}

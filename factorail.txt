@@ -1,0 +1,17 @@
+ import java.util.Scanner;
+public class Main
+{
+public static void main(String[] args){
+//Take User Input number to calculate the factorial of that number
+System.out.print("ENETR THE NUMBER TO CALCULATE FACTORIAL:");
+Scanner X=new Scanner(System.in);
+int num=X.nextInt();
+long factorial = 1;
+for(int i = 1; i<= num; ++i)
+{
+// factorial = factorial * i;
+factorial *= i;
+}
+System.out.printf("Factorial of %d = %d:", num, factorial);
+}
+}

@@ -1,0 +1,20 @@
+
+interface C {  
+    //This is interface C 
+    void print1(); } 
+interface D {
+     // This is interface D
+      void show1(); 
+    }
+    public class Interface implements C, D {
+         // class Interface is implementing both interface C and D 
+         public void print1() { System.out.println("TYETC224 Virajas Joshi"); 
+        } public void show1() { System.out.println("This is Multiple Interface"); 
+    } public static void main(String[] args) 
+    { // TODO Auto-generated method stub
+         Interface obj = new Interface();
+          obj.print1();
+           obj.show1();
+           // Hence interface helps implementing multiple interface 
+        } 
+    }

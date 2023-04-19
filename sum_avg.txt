@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class Sum {
+public static void main(String[] args) {
+// To do Auto-generated method stub
+Scanner sc = new Scanner(System.in);
+//declare the variable
+int i, n, num, sum = 0;
+float avg;
+//user input elements
+System.out.print("Enter the no. of elements: ");
+n = sc.nextInt();
+System.out.print("Enter " + n + " elements: \n");
+for (i = 1; i <= n; i++) {
+num = sc.nextInt();
+//calculate sum
+sum = sum + num;
+}
+//calculate avg
+avg = (float) sum / n;
+// display result
+System.out.println("Sum:" + sum);
+System.out.println("Average:" + avg);
+}
+}

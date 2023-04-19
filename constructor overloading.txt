@@ -1,0 +1,30 @@
+public class student {
+    // declare the variables
+    String firstname;
+    String lastname;
+    int rollno;
+    int age;
+
+    // create constructor with same name as of class name and pass the arguments
+    // parameterized constructor
+    student(String firstname, String lastname, int rolllno, int age) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
+
+    // default constructor
+    student() {
+        firstname = "Yadnesh";
+        lastname = "Kotakr";
+        rollno = 203;
+    }
+
+    public static void main(String[] args) {
+        // create a reference to class and pass the value
+        student mystudent = new student("Virajas", "Joshi", 224, 21);
+        student mystudent2 = new student();
+        System.out.println(mystudent.firstname);
+        System.out.println(mystudent.lastname);
+        System.out.println(mystudent.rollno);
+    }
+}

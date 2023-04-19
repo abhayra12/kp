@@ -1,0 +1,29 @@
+//To implement method overloading
+public class Main {
+    // create a method operation for 3 different operation
+    // calculate sum;
+    public int operation(int x, int y, int z) {
+        System.out.println("SUM OF NUMBERS IS:");
+        return (x + y + z);
+    }
+
+    // calculate difference;
+    public float operation(float x, float y) {
+        System.out.println("Difference OF NUMBERS IS:");
+        return (x - y);
+    }
+
+    // calculate avg;
+    public double operation(double x, double y, double z) {
+        System.out.println("AVARAGE OF NUMBERS IS:");
+        return ((x + y + z) / 3);
+    }
+
+    public static void main(String[] args) {
+        Main s = new Main();
+        // crate the object of main class
+        System.out.println(s.operation(15, 22));
+        System.out.println(s.operation(15, 22, 50));
+        System.out.println(s.operation(15.5, 22, 50));
+    }
+}

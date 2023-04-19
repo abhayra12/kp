@@ -1,0 +1,63 @@
+import java.util.*;
+
+//Declare Class With class name main
+public class Rectangle {
+    // initilize variables to calculate area of rectangle
+    double length, width, area;
+    String color;
+
+    // create a function get_user to get user input length
+    public void get_length() {
+        Scanner i = new Scanner(System.in);
+        System.out.println("Enter the length of rectangle: ");
+        length = i.nextDouble();
+
+    }
+
+    // create a function get_width to get user input width
+    public void get_width() {
+        Scanner i = new Scanner(System.in);
+        System.out.println("Enter the width of rectangle: ");
+        width = i.nextDouble();
+
+    }
+
+    // calculate area using length and width
+    public double find_area() {
+        return length * width;
+    }
+
+    // Create a function get_color to enter color of rectangle for comparison
+    public void get_color() {
+        Scanner i = new Scanner(System.in);
+        System.out.println("Enter the color of rectangle : ");
+        color = i.nextLine();
+    }
+
+    public static void main(String[] args) {
+        Scanner i = new Scanner(System.in);
+        // creates a Java object and allocates memory
+
+        Rectangle x = new Rectangle();
+        System.out.println("Rectangle 1");
+        x.get_length();
+        x.get_width();
+        double x_area = x.find_area();
+        x.get_color();
+
+        Rectangle y = new Rectangle();
+        System.out.println("Rectangle 2");
+        y.get_length();
+        y.get_width();
+        double y_area = y.find_area();
+        y.get_color();
+        // condition to check for matching colors
+        // if areas and colors of both rectangles are same then print matching
+        // rectangles
+        if (x_area == y_area && x.color.equals(y.color)) {
+            System.out.println("Matching Rectangles");
+        } else {
+            System.out.println("Non Matching Rectangles");
+        }
+    }
+}
